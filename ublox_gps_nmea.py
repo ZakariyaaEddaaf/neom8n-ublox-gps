@@ -82,7 +82,8 @@ class DroneRC:
                             print(f"Latitude: {latitude}, Longitude: {longitude}")
                             if latitude is not None and longitude is not None:
                                 self.write_to_log_file(line.strip())
-                                self.transmit_gps_data(li                except serial.SerialException as e:
+                                self.transmit_gps_data(line.strip())
+                except serial.SerialException as e:
                     print(f"Serial Error: {e}")
                 except Exception as e:
                     print(f"Error: {e}")
